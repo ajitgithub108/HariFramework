@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 		@CucumberOptions(
 		
 				features = "src\\test\\java\\featureFiles",
-				tags= "@homepage_auth",
+				tags= "@cam_log_page",
 				glue ="stepdef",
 				monochrome = true,
 				dryRun = false,

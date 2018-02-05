@@ -13,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public abstract class BaseClass {
 	
-	public void readExcel(String sheetName) {
+	/*public void readExcel(String sheetName) {
 		
 
 		String currentPath = System.getProperty("user.dir");
@@ -73,7 +73,7 @@ public abstract class BaseClass {
 			e.printStackTrace();
 		}
 		
-	}
+	}*/
 	
 	
 }

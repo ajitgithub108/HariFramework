@@ -1,7 +1,5 @@
 package generic;
 
-
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -25,6 +23,7 @@ public abstract class SeleniumClass extends BaseClass {
 	
 	private static WebDriver driver;
 	private WebElement element; 
+	//private WebElement Alert;
 	private List <WebElement> elements;
 	private Select sel;
 	
@@ -70,11 +69,12 @@ public abstract class SeleniumClass extends BaseClass {
 		
 		if(type.equalsIgnoreCase("url")) {
 			 actual = driver.getCurrentUrl(); 
+			 System.out.println(actual);
 		}else if(type.equalsIgnoreCase("title")) { 
 			 actual = driver.getTitle();
 		}
-		
-		assert expected.equals(actual) : "Actual URL is not matching with expected url";
+		 System.out.println(actual);
+		assert expected.equals(actual) : actual+"Actual URL is not matching with expected url";
 	}
 	
 	public String actionToPerform(String actionType, WebElement actulElement,String textTopass) {
@@ -115,6 +115,7 @@ public abstract class SeleniumClass extends BaseClass {
 			
 			driver.navigate().back();
 			
+			
 		}
 		else if(type.equalsIgnoreCase("forward")) {
 			driver.navigate().forward();
@@ -133,6 +134,16 @@ public abstract class SeleniumClass extends BaseClass {
 	public void expliciteWait(String idLocator) {
 		WebDriverWait wdw = new WebDriverWait(driver,20);
 		wdw.until(ExpectedConditions.presenceOfElementLocated(By.id(idLocator)));
+	}
+	
+	public void alertWait() {
+		WebDriverWait wdw = new WebDriverWait(driver,20);
+		wdw.until(ExpectedConditions.alertIsPresent());
+		driver.switchTo().alert().accept();
+		wdw.until(ExpectedConditions.alertIsPresent());
+		driver.switchTo().alert().accept();
+		wdw.until(ExpectedConditions.alertIsPresent());
+		driver.switchTo().alert().accept();
 	}
 	
 	
@@ -232,7 +243,7 @@ public abstract class SeleniumClass extends BaseClass {
 		
 	}
 	
-	public void switchWindow() {
+	/*public void switchWindow() {
 		String parentHandler = driver.getWindowHandle();
 		Set<String>  allHandles = driver.getWindowHandles();
 		
@@ -246,9 +257,9 @@ public abstract class SeleniumClass extends BaseClass {
 			}
 		}
 		
-	}
+	}*/
 	
-	public void captureScreenShot() {
+	/*public void captureScreenShot() {
 		
 		File src =  ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		
@@ -267,7 +278,7 @@ public abstract class SeleniumClass extends BaseClass {
 			e.printStackTrace();
 		}
 		
-	}
+	}*/
 	
 	
 }
