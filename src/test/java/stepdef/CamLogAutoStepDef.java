@@ -11,7 +11,6 @@ public class CamLogAutoStepDef {
 	
 	@Then("^get all error ancher links on cam_alerts page$")
 	public void get_all_error_ancher_links_on_cam_alerts_page() throws Throwable {
-	    
 		objcla.getAllErrorLinks();
 	}
 	

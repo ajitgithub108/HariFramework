@@ -62,7 +62,9 @@ public class CamLogAuto extends SeleniumClass {
 			allTasks.add(linkUrl);
 		}
 		
-		
+		int sizex =  allTasks.size();
+		System.out.println( sizex+ "Browser is launched");
+
 		for (int i = 0; i < allTasks.size(); i++) {
 						
 				//System.out.println(allTasks.get(i));			
@@ -85,8 +87,14 @@ public class CamLogAuto extends SeleniumClass {
 						updateButton = super.identifyElement("xpath",xpathUpdateButton);   // update button  selector 
 									
 						sel = new Select(dropelem);  
+					
+						
 						sel.selectByValue("ERROR");  // click on dropdown for error selection 
+						
+						
 						updateButton.click();   // click on update button
+						
+
 						
 						if(super.identifyElements("class","tableHead").size() == 0) {  
 						    taskId = linkUrl.substring(linkUrl.lastIndexOf("=") + 1);  

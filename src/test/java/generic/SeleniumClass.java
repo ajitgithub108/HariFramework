@@ -243,42 +243,6 @@ public abstract class SeleniumClass extends BaseClass {
 		
 	}
 	
-	/*public void switchWindow() {
-		String parentHandler = driver.getWindowHandle();
-		Set<String>  allHandles = driver.getWindowHandles();
-		
-		for(String handle: allHandles) {
-			if(handle.equals(parentHandler)) {
-				continue;
-			}
-			else {
-				driver.switchTo().window(handle);
-				break;
-			}
-		}
-		
-	}*/
-	
-	/*public void captureScreenShot() {
-		
-		File src =  ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		
-		String currentPath = System.getProperty("user.dir");
-		
-		Long timeStamp = System.currentTimeMillis();
-		
-		currentPath = currentPath + "\\target\\screenShots\\"+ timeStamp+".png";
-		
-		File dst = new File(currentPath);
-		
-		try {
-			FileUtils.copyFile(src, dst);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}*/
 	
 	
 }
